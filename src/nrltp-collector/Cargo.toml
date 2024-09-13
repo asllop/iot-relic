@@ -1,0 +1,15 @@
+[package]
+name = "nrltp-collector"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+nrltp_server = { path = "nrltp_server" }
+clap = { version = "3.0.10", features = ["derive"] }
+tokio = { version = "1.15.0", features = ["full"] }
+hyper = { version = "0.14.16", features = ["full"] }
+hyper-tls = "0.5.0"
+serde = { version = "1.0.133", features = ["derive"] }
+serde_json = "1.0.75"
