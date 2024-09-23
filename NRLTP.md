@@ -18,7 +18,7 @@ All sizes and offsets are in bytes unless otherwise noted.
 | 5 | 2bits | `0` little endian, `1` big endian. | `ENDIANNESS` | Ordering of multibyte numbers. |
 | 5 + 2bits | 6bits | From 0 to 63 + 8. So min value is 8 and max is 71. | `HEADER_SIZE` | Header size. |
 | 6 | 2 | From 0 to 65535 (*). | `BODY_SIZE` | Body size. |
-| 8 | - | - | - | If `HEADER_SIZE > 8`, here comes the fields defined in future protocol versions. |
+| 8 | - | - | - | If `HEADER_SIZE > 0` (> 8 bytes), here comes the fields defined in future protocol versions. |
 
 (*): Even if `BODY_SIZE` is 16 bits wide, it can't be bigger than 65519. That's because the UDP max datagram size is 65535, the UDP header is 8 bytes and the NRLTP header is also (min) 8 bytes, so 65535 - 8 - 8 = 65519.
 
